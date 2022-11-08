@@ -2,7 +2,7 @@
 import { jsx } from "theme-ui"
 import { HeadFC, Link } from "gatsby"
 import Layout from "@lekoarts/gatsby-theme-minimal-blog/src/components/layout"
-import Title from "@lekoarts/gatsby-theme-minimal-blog/src/components/title"
+import Title from "./title"
 import Listing from "@lekoarts/gatsby-theme-minimal-blog/src/components/listing"
 import List from "@lekoarts/gatsby-theme-minimal-blog/src/components/list"
 import useMinimalBlogConfig from "@lekoarts/gatsby-theme-minimal-blog/src/hooks/use-minimal-blog-config"
