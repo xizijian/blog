@@ -1,0 +1,24 @@
+# Live2D
+## https://github.com/EYHN/hexo-helper-live2d
+live2d:
+  enable: true
+  scriptFrom: local # 默认
+  pluginModelPath: assets/ # 模型文件相对与插件根目录路径
+  model:
+    use: live2d-widget-model-tororo # 模型名字
+    scale: 1
+    hHeadPos: 0.5
+    vHeadPos: 0.618
+  display:
+    superSample: 2
+    width: 250  # 显示位置及大小 我设置的250*500
+    height: 500
+    position: right
+    hOffset: 0
+    vOffset: -20
+  mobile:
+    show: false  # 手机显示开关，建议关闭
+    scale: 0.5
+  react:
+    opacityDefault: 0.7
+    opacityOnHover: 0.2
