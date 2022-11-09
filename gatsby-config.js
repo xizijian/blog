@@ -10,11 +10,11 @@ module.exports = {
     // You can overwrite values here that are used for the SEO component
     // You can also add new values here to query them like usual
     // See all options: https://github.com/LekoArts/gatsby-themes/blob/main/themes/gatsby-theme-minimal-blog/gatsby-config.js
-    siteTitle: `Jan.Xi Blog`,
-    siteTitleAlt: `Jan.Xi Blog`,
-    siteHeadline: `Jan.Xi Blog`,
-    siteUrl: `https://minimal-blog.lekoarts.de`,
-    siteDescription: `Typography driven, feature-rich blogging theme with minimal aesthetics. Includes tags/categories support and extensive features for code blocks such as live preview, line numbers, and line highlighting.`,
+    siteTitle: `Jan.Xi | Blog`,
+    siteTitleAlt: `Jan.Xi | Blog`,
+    siteHeadline: `Jan.Xi | Blog`,
+    siteUrl: `https://janxzj.com`,
+    siteDescription: `去发光 而不是 被照亮`,
     siteImage: `/banner.jpg`,
     author: `Jan.Xi`,
   },
@@ -126,7 +126,7 @@ module.exports = {
               }
             `,
             output: `rss.xml`,
-            title: `Minimal Blog - @lekoarts/gatsby-theme-minimal-blog`,
+            title: `JanXi Blog`,
           },
         ],
       },
