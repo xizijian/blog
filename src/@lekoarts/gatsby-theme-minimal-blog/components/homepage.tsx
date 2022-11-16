@@ -10,7 +10,6 @@ import useSiteMetadata from "@lekoarts/gatsby-theme-minimal-blog/src/hooks/use-s
 import replaceSlashes from "@lekoarts/gatsby-theme-minimal-blog/src/utils/replaceSlashes"
 import { visuallyHidden } from "@lekoarts/gatsby-theme-minimal-blog/src/styles/utils"
 import Seo from "@lekoarts/gatsby-theme-minimal-blog/src/components/seo"
-import Hero from "../texts/hero.mdx"
 import Bottom from "../texts/bottom.mdx"
 
 export type MBHomepageProps = {
@@ -40,10 +39,10 @@ const Homepage = ({ posts }: MBHomepageProps) => {
       {/* <section sx={{ mb: [5, 6, 7], p: { fontSize: [1, 2, 3], mt: 2 }, variant: `section_hero` }}>
         <Hero />
       </section> */}
-      <Title text="Latest Posts">
+      {/* <Title text="Latest Posts">
         <Link to={replaceSlashes(`/${basePath}/${blogPath}`)}>查看全部</Link>
-      </Title>
-      <Listing posts={posts} showTags={false} />
+      </Title> */}
+      <Listing posts={posts} showTags={true} />
       <List>
         <Bottom />
       </List>

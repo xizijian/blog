@@ -1,5 +1,5 @@
 import * as React from "react"
-import Homepage, { Head } from "./gatsby-theme-minimal-blog/components/homepage"
+import Homepage, { Head } from "./components/homepage"
 
 type Props = {
   data: {
@@ -14,8 +14,7 @@ export default function MinimalBlogCoreHomepage({ ...props }: Props) {
     data: { allPost },
   } = props
   console.log('data:',allPost);
-  
-  debugger
+
   return <Homepage posts={allPost.nodes} {...props} />
 }
 
