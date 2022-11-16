@@ -140,6 +140,13 @@ module.exports = {
         head: false,
       },
     },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [`Source Sans Pro`, `Poppins\:400,400i,700`],
+        display: "swap",
+      },
+    },
     shouldAnalyseBundle && {
       resolve: `gatsby-plugin-webpack-bundle-analyser-v2`,
       options: {

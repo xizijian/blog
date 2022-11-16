@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 import { HeadFC, Link } from "gatsby"
-import Layout from "@lekoarts/gatsby-theme-minimal-blog/src/components/layout"
+import Layout from "../components/layout"
 import Title from "./title"
 import Listing from "../components/listing"
 import List from "@lekoarts/gatsby-theme-minimal-blog/src/components/list"
@@ -32,7 +32,8 @@ const Homepage = ({ posts }: MBHomepageProps) => {
   
   const { basePath, blogPath } = useMinimalBlogConfig()
   const { siteTitle } = useSiteMetadata()
-
+  console.log('posts:',posts);
+  
   return (
     <Layout>
       <h1 sx={visuallyHidden}>{siteTitle}</h1>
