@@ -25,6 +25,7 @@ const BlogListItem = ({ post, showTags = true }: BlogListItemProps) => (
     <Link to={post.slug} sx={(t) => ({ ...t.styles?.a, fontSize: [ 2, 3], color: `#4361ee`,fontWeight:500 })}>
       {post.title}
     </Link>
+    
     <p sx={{ color: `secondary`, mt: 1, a: { color: `secondary` }, fontSize: [1, 1, 2] }}>
       <time>{post.date}</time>
       {post.tags && showTags && (
