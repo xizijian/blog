@@ -33,6 +33,8 @@ const BlogListItem = ({ post, showTags = true }: BlogListItemProps) => (
           <ItemTags tags={post.tags} />
         </React.Fragment>
       )}
+      <React.Fragment><span>{` — ${post.timeToRead}min`}</span></React.Fragment>
+      
     </p>
   </Box>
 )
