@@ -2,7 +2,7 @@
 import * as React from "react"
 import { jsx, Box } from "theme-ui"
 import { Link } from "gatsby"
-import ItemTags from "@lekoarts/gatsby-theme-minimal-blog/src/components/item-tags"
+import ItemTags from "./item-tags"
 
 type BlogListItemProps = {
   post: {
@@ -22,18 +22,20 @@ type BlogListItemProps = {
 
 const BlogListItem = ({ post, showTags = true }: BlogListItemProps) => (
   <Box mb={4}>
+    
     <Link to={post.slug} sx={(t) => ({ ...t.styles?.a, fontSize: [ 2, 3], color: `#4361ee`,fontWeight:500 })}>
       {post.title}
     </Link>
-    <p sx={{ color: `secondary`, mt: 1, a: { color: `secondary` }, fontSize: [1, 1, 2] }}>
-      <time>{post.date}</time>
+    <p sx={{ color: `secondary`, mt: 1, a: { color: `secondary` }, fontSize: [1, 1, `0.9rem`] }}>
+      
       {post.tags && showTags && (
         <React.Fragment>
-          {` — `}
           <ItemTags tags={post.tags} />
         </React.Fragment>
       )}
-      <React.Fragment><span>{` — ${post.timeToRead}min`}</span></React.Fragment>
+      {` · `}
+      <time>{post.date}</time>
+      <React.Fragment><span>{` · ${post.timeToRead}min`}</span></React.Fragment>
       
     </p>
   </Box>

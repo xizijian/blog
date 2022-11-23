@@ -19,15 +19,12 @@ module.exports = {
     author: `Jan.Xi`,
   },
   plugins: [
-    // {
-      // resolve: `gatsby-plugin-styled-components`,
-      // options: {
-        // Change plugin default options here, e.g.:
-        // ssr: false
-        // displayName: false,
-        // minify: false
-      // },
-    // },
+    {
+      resolve: `gatsby-plugin-styled-components`,
+      options: {
+        // Add any options here
+      },
+    },
     {
       resolve: `@lekoarts/gatsby-theme-minimal-blog`,
       // See the theme's README for all available options
