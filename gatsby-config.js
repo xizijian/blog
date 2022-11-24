@@ -65,10 +65,10 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `JanXi Blog`,
-        short_name: `janxi-blog`,
+        short_name: `JanXi-blog`,
         description: `去发光 而不是 被照亮`,
         start_url: `/`,
-        background_color: `#fff`,
+        background_color: `#4361ee`,
         // This will impact how browsers show your PWA/website
         // https://css-tricks.com/meta-theme-color-and-trickery/
         // theme_color: `#6B46C1`,
@@ -137,12 +137,21 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: `gatsby-plugin-google-gtag`,
       options: {
-        // The property ID; the tracking code won't be generated without it
-        trackingId: "G-CDYSRJ7MT3",
-        // Defines where to place the tracking script - `true` in the head and `false` in the body
-        head: false,
+        // You can add multiple tracking ids and a pageview event will be fired for all of them.
+        trackingIds: [
+          "G-CDYSRJ7MT3", // Google Analytics / GA
+        ],
+        // This object is used for configuration specific to this plugin
+        pluginConfig: {
+          // Puts tracking script in the head instead of the body
+          head: true,
+          // Setting this parameter is also optional
+          respectDNT: true,
+          // Avoids sending pageview hits from custom paths
+          exclude: ["/preview/**", "/do-not-track/me/too/"],
+        },
       },
     },
     {
