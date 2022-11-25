@@ -15,7 +15,7 @@ module.exports = {
     siteHeadline: `Jan.Xi | Blog`,
     siteUrl: `https://janxzj.com`,
     siteDescription: `去发光 而不是 被照亮`,
-    siteImage: `/banner.jpg`,
+    siteImage: `/android-chrome-512x512.png`,
     author: `Jan.Xi`,
   },
   plugins: [
@@ -85,6 +85,12 @@ module.exports = {
             type: `image/png`,
           },
         ],
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-offline',
+      options: {
+        precachePages: ['/article/*', '/portfolio'],
       },
     },
     {
