@@ -1,12 +1,14 @@
 /** @jsx jsx */
 import { jsx, useColorMode, Flex } from "theme-ui";
 import useMinimalBlogConfig from "@lekoarts/gatsby-theme-minimal-blog/src/hooks/use-minimal-blog-config";
-import ColorModeToggle from "@lekoarts/gatsby-theme-minimal-blog/src/components/colormode-toggle";
+import ColorModeToggle from "./colormode-toggle";
 import Navigation from "@lekoarts/gatsby-theme-minimal-blog/src/components/navigation";
 import HeaderTitle from "./header-title";
 import HeaderExternalLinks from "@lekoarts/gatsby-theme-minimal-blog/src/components/header-external-links";
-import DarkImg from "../static/github.svg";
-import LightImg from "../static/light-github.svg";
+import DarkGitImg from "../static/github.svg";
+import LightGitImg from "../static/light-github.svg";
+import RssImg from "../static/rss.svg";
+import LightRssImg from "../static/light-rss.svg";
 
 const Header = () => {
   const { navigation: nav } = useMinimalBlogConfig();
@@ -22,13 +24,39 @@ const Header = () => {
       <Flex sx={{ alignItems: `center`, justifyContent: `space-between` }}>
         <HeaderTitle />
         <Flex sx={{ alignItems: `center` }}>
-          <a sx={{ display:`flex`, alignItems: `center` }} href="https://github.com/xizijian">
-            {isDark?
-              <img sx={{ mr: [1, 2] }} src={DarkImg} alt="" />
-              :
-              <img sx={{ mr: [1, 2] }} src={LightImg} alt="" />
-            }
+          <a
+            sx={{
+              display: `flex`,
+              alignItems: `center`,
+              opacity: 0.65,
+              cursor: `pointer`,
+              "&:hover, &:focus": { opacity: 1 },
+            }}
+            href="https://janxzj.com/rss.xml"
+          >
+            {isDark ? (
+              <img sx={{ mr: [`0.6rem`, `0.8rem`] }} src={LightRssImg} alt="" />
+            ) : (
+              <img sx={{ mr: [`0.6rem`, `0.8rem`] }} src={RssImg} alt="" />
+            )}
           </a>
+          <a
+            sx={{
+              display: `flex`,
+              alignItems: `center`,
+              opacity: 0.65,
+              cursor: `pointer`,
+              "&:hover, &:focus": { opacity: 1 },
+            }}
+            href="https://github.com/xizijian"
+          >
+            {isDark ? (
+              <img sx={{ mr: [1, 2] }} src={DarkGitImg} alt="" />
+            ) : (
+              <img sx={{ mr: [1, 2] }} src={LightGitImg} alt="" />
+            )}
+          </a>
+
           <ColorModeToggle isDark={isDark} toggle={toggleColorMode} />
         </Flex>
       </Flex>
