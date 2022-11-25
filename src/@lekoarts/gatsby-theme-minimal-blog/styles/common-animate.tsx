@@ -19,6 +19,7 @@ export const WaveText = styled.div`
   top:0px;
   @media (max-width: 640px) {
     font-size: 2em;
+    top:3px;
   }
 `;
 
@@ -30,5 +31,6 @@ export const Wave = styled.div`
   top:0px;
   @media (max-width: 640px) {
     font-size: 2em;
+    top:3px;
   }
 `;
