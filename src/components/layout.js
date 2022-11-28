@@ -70,6 +70,7 @@ const Layout = ({ children }) => {
   `)
 
   const { isClient } = useIsClient()
+  
   // const [state, dispatch] = useWeather()
 
   // function activateLocation() {
