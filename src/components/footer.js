@@ -43,6 +43,7 @@ const SocialButton = styled.a`
   margin-right: 16px;
   border: 0;
   cursor: pointer;
+  opacity:0.7;
 `
 
 const Footer = () => (
