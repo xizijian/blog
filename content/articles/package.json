@@ -1,0 +1,20 @@
+{
+  "name": "articles",
+  "version": "1.0.0",
+  "scripts": {
+    "prettier": "prettier",
+    "prettier:base": "yarn run prettier \"**/*.{js,json,scss,md,ts,html,component.html}\"",
+    "prettier:write": "yarn run prettier:base --write",
+    "prettier:check": "yarn run prettier:base --list-different",
+    "dev-to-git": "dev-to-git"
+  },
+  "dependencies": {
+    "dev-to-git": "1.4.1",
+    "prettier": "1.19.1"
+  },
+  "repository": {
+    "url": "https://github.com/xizijian/blog"
+  },
+  "author": "JanXi <13134401188@163.com>",
+  "license": "MIT"
+}

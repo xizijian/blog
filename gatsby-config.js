@@ -1,66 +1,80 @@
-require(`dotenv`).config();
+const siteMetadata = require("./content/site-metadata")
 
-const shouldAnalyseBundle = process.env.ANALYSE_BUNDLE;
-
-/**
- * @type {import('gatsby').GatsbyConfig}
- */
 module.exports = {
-  siteMetadata: {
-    // You can overwrite values here that are used for the SEO component
-    // You can also add new values here to query them like usual
-    // See all options: https://github.com/LekoArts/gatsby-themes/blob/main/themes/gatsby-theme-minimal-blog/gatsby-config.js
-    siteTitle: `Jan.Xi | Blog`,
-    siteTitleAlt: `Jan.Xi | Blog`,
-    siteHeadline: `Jan.Xi | Blog`,
-    siteUrl: `https://janxzj.com`,
-    siteDescription: `去发光 而不是 被照亮`,
-    siteImage: `/android-chrome-512x512.png`,
-    author: `Jan.Xi`,
-  },
+  siteMetadata: siteMetadata,
   plugins: [
+    `gatsby-plugin-styled-components`,
     {
-      resolve: `gatsby-plugin-styled-components`,
+      resolve: `gatsby-transformer-remark`,
       options: {
-        // Add any options here
-      },
-    },
-    {
-      resolve: `@lekoarts/gatsby-theme-minimal-blog`,
-      // See the theme's README for all available options
-      options: {
-        navigation: [
+        plugins: [
           {
-            title: `Blog`,
-            slug: `/blog`,
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              classPrefix: "language-",
+              inlineCodeMarker: null,
+              showLineNumbers: false,
+              noInlineHighlight: false,
+            },
           },
           {
-            title: `Projects`,
-            slug: `/project`,
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 590,
+              linkImagesToOriginal: false,
+            },
           },
           {
-            title: `About`,
-            slug: `/about`,
+            resolve: `gatsby-remark-images-medium-zoom`,
+            options: {},
           },
-        ],
-        externalLinks: [
-          // {
-          //   name: `Twitter`,
-          //   url: `https://twitter.com/lekoarts_de`,
-          // },
-          // {
-          //   name: `Homepage`,
-          //   url: `https://www.lekoarts.de?utm_source=minimal-blog&utm_medium=Starter`,
-          // },
         ],
       },
     },
     {
-      resolve: `gatsby-plugin-sitemap`,
+      resolve: `gatsby-source-filesystem`,
       options: {
-        output: `/`,
+        name: `content`,
+        path: `${__dirname}/content/articles/articles`,
       },
     },
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        // You can add multiple tracking ids and a pageview event will be fired for all of them.
+        trackingIds: [
+          "G-CDYSRJ7MT3", // Google Analytics / GA
+        ],
+        // This object is used for configuration specific to this plugin
+        pluginConfig: {
+          // Puts tracking script in the head instead of the body
+          head: true,
+          // Setting this parameter is also optional
+          respectDNT: true,
+          // Avoids sending pageview hits from custom paths
+          exclude: ["/preview/**", "/do-not-track/me/too/"],
+        },
+      },
+    },
+    {
+      resolve: "gatsby-plugin-web-font-loader",
+      options: {
+        google: {
+          families: ["Roboto", "Exo"],
+        },
+      },
+    },
+    `react-static-plugin-styled-components`,
+    `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/images`,
+      },
+    },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -88,92 +102,16 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-offline',
+      resolve: `gatsby-plugin-layout`,
       options: {
-        precachePages: ['/article/*', '/portfolio'],
+        component: require.resolve(`./src/components/layout.js`),
       },
     },
     {
-      resolve: `gatsby-plugin-feed`,
+      resolve: `gatsby-plugin-offline`,
       options: {
-        query: `
-          {
-            site {
-              siteMetadata {
-                title: siteTitle
-                description: siteDescription
-                siteUrl
-                site_url: siteUrl
-              }
-            }
-          }
-        `,
-        feeds: [
-          {
-            serialize: ({ query: { site, allPost } }) =>
-              allPost.nodes.map((post) => {
-                const url = site.siteMetadata.siteUrl + post.slug;
-                const content = `<p>${post.excerpt}</p><div style="margin-top: 50px; font-style: italic;"><strong><a href="${url}">Keep reading</a>.</strong></div><br /> <br />`;
-
-                return {
-                  title: post.title,
-                  date: post.date,
-                  excerpt: post.excerpt,
-                  url,
-                  guid: url,
-                  custom_elements: [{ "content:encoded": content }],
-                };
-              }),
-            query: `
-              {
-                allPost(sort: { fields: date, order: DESC }) {
-                  nodes {
-                    title
-                    date(formatString: "MMMM D, YYYY")
-                    excerpt
-                    slug
-                  }
-                }
-              }
-            `,
-            output: `rss.xml`,
-            title: `JanXi Blog`,
-          },
-        ],
+        precachePages: [`/`, `/articles/*`, `projects`],
       },
     },
-    {
-      resolve: `gatsby-plugin-google-gtag`,
-      options: {
-        // You can add multiple tracking ids and a pageview event will be fired for all of them.
-        trackingIds: [
-          "G-CDYSRJ7MT3", // Google Analytics / GA
-        ],
-        // This object is used for configuration specific to this plugin
-        pluginConfig: {
-          // Puts tracking script in the head instead of the body
-          head: true,
-          // Setting this parameter is also optional
-          respectDNT: true,
-          // Avoids sending pageview hits from custom paths
-          exclude: ["/preview/**", "/do-not-track/me/too/"],
-        },
-      },
-    },
-    {
-      resolve: `gatsby-plugin-google-fonts`,
-      options: {
-        fonts: [`Source Sans Pro`, `Poppins\:400,400i,700`],
-        display: "swap",
-      },
-    },
-    shouldAnalyseBundle && {
-      resolve: `gatsby-plugin-webpack-bundle-analyser-v2`,
-      options: {
-        analyzerMode: `static`,
-        reportFilename: `_bundle.html`,
-        openAnalyzer: false,
-      },
-    },
-  ].filter(Boolean),
-};
+  ],
+}

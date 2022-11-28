@@ -1,0 +1,17 @@
+language: node_js
+
+dist: trusty
+
+cache:
+  directories:
+    - ~/.npm
+
+node_js:
+  - '12'
+
+script:
+  - if [ "$TRAVIS_BRANCH" = "master" -a "$TRAVIS_PULL_REQUEST" = "false" ]; then DEV_TO_GIT_TOKEN=$DEV_TO_GIT_TOKEN yarn run dev-to-git && bash ./bin/deploy-brunnerliv.io.sh; fi
+
+branches:
+  except:
+    - /^v\d+\.\d+\.\d+$/
