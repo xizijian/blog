@@ -7882,11 +7882,11 @@ lmdb@2.5.3:
     "@lmdb/lmdb-win32-x64" "2.5.3"
 
 lmdb@^2.0.2:
-  version "2.7.0"
-  resolved "https://registry.npmmirror.com/lmdb/-/lmdb-2.7.0.tgz#52ea192676ac02fbf11aaad5848c9c81a7461f60"
-  integrity sha512-Xtphdi679rNNAYJul7X04n4fcgzCGtrZNzRd9U0LPZx9TWv53MwAnZOZjUGgJ4ZZzqalBEeg32P0uKdKiAIN1Q==
+  version "2.7.1"
+  resolved "https://registry.npmmirror.com/lmdb/-/lmdb-2.7.1.tgz#bbe672c40f17c11729bae80e9bc527b148e04feb"
+  integrity sha512-q/3MW9K7SDE5DWHNUpKBysUqW++0Pwpb1G91EPOBI6zIlWM78A0HxNnSgPa05U0BvdR1exeUV7jj3I/ngI1OpQ==
   dependencies:
-    msgpackr "1.8.0"
+    msgpackr "1.8.1"
     node-addon-api "^4.3.0"
     node-gyp-build-optional-packages "5.0.3"
     ordered-binary "^1.4.0"
@@ -8590,10 +8590,10 @@ msgpackr-extract@^2.2.0:
     "@msgpackr-extract/msgpackr-extract-linux-x64" "2.2.0"
     "@msgpackr-extract/msgpackr-extract-win32-x64" "2.2.0"
 
-msgpackr@1.8.0, msgpackr@^1.5.4:
-  version "1.8.0"
-  resolved "https://registry.npmmirror.com/msgpackr/-/msgpackr-1.8.0.tgz#6cf213e88f04c5a358c61085a42a4dbe5542de44"
-  integrity sha512-1Cos3r86XACdjLVY4CN8r72Cgs5lUzxSON6yb81sNZP9vC9nnBrEbu1/ldBhuR9BKejtoYV5C9UhmYUvZFJSNQ==
+msgpackr@1.8.1, msgpackr@^1.5.4:
+  version "1.8.1"
+  resolved "https://registry.npmmirror.com/msgpackr/-/msgpackr-1.8.1.tgz#2298aed8a14f83e99df77d344cbda3e436f29b5b"
+  integrity sha512-05fT4J8ZqjYlR4QcRDIhLCYKUOHXk7C/xa62GzMKj74l3up9k2QZ3LgFc6qWdsPHl91QA2WLWqWc8b8t7GLNNw==
   optionalDependencies:
     msgpackr-extract "^2.2.0"
 
