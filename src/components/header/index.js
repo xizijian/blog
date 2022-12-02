@@ -11,6 +11,7 @@ import { WeatherContext } from "./weather/weatherProvider"
 import DarkModeToggle from "./toggles/dark-mode-toggle"
 import LocationToggle from "./toggles/location-toggle"
 import WeatherSettings from "./toggles/weather-settings"
+import SiteTitle from "./toggles/site-title"
 
 const HeaderWrapper = styled.header`
   margin: 0;
@@ -149,7 +150,9 @@ const Header = () => {
       {isClient && (
         // Somehow it does not want to render correctly on the server..
         <>
+        <SiteTitle />
           <HeaderContent>
+            
             <ToggleContainer>
               <LocationToggle
                 active={state.controller === "location"}
