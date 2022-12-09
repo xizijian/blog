@@ -95,5 +95,6 @@ module.exports = {
         precachePages: [`/`, `/articles/*`, `projects`],
       },
     },
+    
   ],
 }

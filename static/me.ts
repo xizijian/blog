@@ -9,6 +9,10 @@ console.log("======= Latest Articles =======");
 console.log();
 
 
+console.log(ink.html("<ink style='background-color: #4038a5;color: #FF7779;font:bold;'>转载一篇知乎上的文章：抖音是如何毁掉我们的？ (2022-12-09)</ink>"));
+ink.terminal.log("<i></i>");
+ink.terminal.log("<blue>https://janxzj.com/articles/life-tiktok</blue>\n");
+
 console.log(ink.html("<ink style='background-color: #4038a5;color: #FF7779;font:bold;'>深度学习 React核心知识（二） (2022-11-24)</ink>"));
 ink.terminal.log("<i></i>");
 ink.terminal.log("<blue>https://janxzj.com/articles/todolist-router</blue>\n");
