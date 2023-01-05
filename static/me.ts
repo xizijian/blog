@@ -9,6 +9,14 @@ console.log("======= Latest Articles =======");
 console.log();
 
 
+console.log(ink.html("<ink style='background-color: #4038a5;color: #FF7779;font:bold;'>React18 新特性解读(二) (2023-01-05)</ink>"));
+ink.terminal.log("<i></i>");
+ink.terminal.log("<blue>https://janxzj.com/articles/react18-2</blue>\n");
+
+console.log(ink.html("<ink style='background-color: #4038a5;color: #FF7779;font:bold;'>React18 新特性解读(一) (2023-01-05)</ink>"));
+ink.terminal.log("<i></i>");
+ink.terminal.log("<blue>https://janxzj.com/articles/react18-1</blue>\n");
+
 console.log(ink.html("<ink style='background-color: #4038a5;color: #FF7779;font:bold;'>转载一篇知乎上的文章：抖音是如何毁掉我们的？ (2022-12-09)</ink>"));
 ink.terminal.log("<i></i>");
 ink.terminal.log("<blue>https://janxzj.com/articles/life-tiktok</blue>\n");
