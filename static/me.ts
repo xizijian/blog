@@ -45,6 +45,10 @@ console.log(ink.html("<ink style='background-color: #4038a5;color: #FF7779;font:
 ink.terminal.log("<i></i>");
 ink.terminal.log("<blue>https://janxzj.com/articles/todolist-design</blue>\n");
 
+console.log(ink.html("<ink style='background-color: #4038a5;color: #FF7779;font:bold;'>🔥 八股文你真的了解吗？ (2022-04-10)</ink>"));
+ink.terminal.log("<i></i>");
+ink.terminal.log("<blue>https://janxzj.com/articles/react18-2</blue>\n");
+
 console.log(ink.html("<ink style='background-color: #4038a5;color: #FF7779;font:bold;'>Create your first module with Deno (2020-02-21)</ink>"));
 ink.terminal.log("<i>In this article, we want to have a look at how to get started with your first module using Deno. We will focus on the general structure and patterns which have emerged from the Deno community thus far.</i>");
 ink.terminal.log("<blue>https://janxzj.com/articles/create-your-first-module-with-deno</blue>\n");
