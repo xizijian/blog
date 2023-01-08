@@ -45,6 +45,10 @@ console.log(ink.html("<ink style='background-color: #4038a5;color: #FF7779;font:
 ink.terminal.log("<i></i>");
 ink.terminal.log("<blue>https://janxzj.com/articles/todolist-design</blue>\n");
 
+console.log(ink.html("<ink style='background-color: #4038a5;color: #FF7779;font:bold;'>你真的理解原型和原型链吗？ (2022-07-20)</ink>"));
+ink.terminal.log("<i></i>");
+ink.terminal.log("<blue>https://janxzj.com/articles/prototype-proto</blue>\n");
+
 console.log(ink.html("<ink style='background-color: #4038a5;color: #FF7779;font:bold;'>🔥 八股文你真的了解吗？ (2022-04-10)</ink>"));
 ink.terminal.log("<i></i>");
 ink.terminal.log("<blue>https://janxzj.com/articles/stereotype</blue>\n");
