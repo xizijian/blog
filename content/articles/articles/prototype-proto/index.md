@@ -17,6 +17,7 @@ cover_image: ''
 var object = {}
 object.__proto__ === Object.prototype // 为 true
 
+
 var fn = function(){}
 fn.__proto__ ===Function.prototype  // 为 true
 fn.__proto__.__proto__ === Object.prototype // 为 true
