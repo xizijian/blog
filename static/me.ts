@@ -9,6 +9,10 @@ console.log("======= Latest Articles =======");
 console.log();
 
 
+console.log(ink.html("<ink style='background-color: #4038a5;color: #FF7779;font:bold;'>前端工程化之CI/CD (2023-01-30)</ink>"));
+ink.terminal.log("<i></i>");
+ink.terminal.log("<blue>https://janxzj.com/articles/engineering</blue>\n");
+
 console.log(ink.html("<ink style='background-color: #4038a5;color: #FF7779;font:bold;'>React18 新特性解读(二) (2023-01-05)</ink>"));
 ink.terminal.log("<i></i>");
 ink.terminal.log("<blue>https://janxzj.com/articles/react18-2</blue>\n");
