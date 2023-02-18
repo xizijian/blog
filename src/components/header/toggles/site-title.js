@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import styled, { keyframes } from "styled-components";
-
+import { Link } from "gatsby"
 export const textAnimate = keyframes`
   0%{
     clip-path: polygon(0% 62%, 14% 55%, 24% 51%, 32% 51%, 41% 56%, 50% 59%, 60% 59%, 69% 55%, 76% 49%, 84% 48%, 93% 50%, 100% 54%, 100% 100%, 0 100%);
@@ -41,6 +41,7 @@ const Panel = styled.div`
   top: 1.3em;
   left:2em;
   width:200px;
+  z-index:100;
   @media (max-width: 640px) {
     left: 1.5em;
     top: 1.5em;
@@ -50,10 +51,13 @@ const Panel = styled.div`
 
 const SiteTitle = () => {
   return (
+    <Link to='/'>
     <Panel>
       <WaveText>JanXi | Blog</WaveText>
       <Wave>JanXi | Blog</Wave>
     </Panel>
+    </Link>
+    
   );
 };
 
