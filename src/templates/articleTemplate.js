@@ -9,7 +9,7 @@ import NeonText from "../components/neon-text"
 const Article = styled.article`
   padding: 1.3125rem;
   max-width: calc(100vw - 1rem);
-  margin-top: 2rem;
+  margin-top: 1.5rem;
   margin-bottom: 2rem;
 
   ${sm`
@@ -26,18 +26,18 @@ const Article = styled.article`
 
   pre {
     margin-left: 0 !important;
-    padding: 1.3125rem !important;
+    padding: 1rem !important;
     font-size: 14px !important;
     border-radius: 0 !important;
     overflow-x: auto !important;
-    margin-top: 4em !important;
-    margin-bottom: 4em !important;
+    margin-top: 2em !important;
+    margin-bottom: 2em !important;
 
     ${sm`
       border-radius: 3px !important;
     `}
     ${md`
-      font-size: 1.2em !important;
+      font-size: 1em !important;
     `}
   }
 
@@ -55,9 +55,9 @@ const Article = styled.article`
   }
 
   h2 {
-    line-height: 1.5em;
-    font-size: 2.4em;
-    margin-top: 2.5em;
+    line-height: 1em;
+    font-size: 1.8em;
+    margin-top: 1em;
     font-weight: 700;
     font-weight: 600;
     font-family: var(--sans-serif);
@@ -66,9 +66,9 @@ const Article = styled.article`
 
   h3 {
     line-height: 2em;
-    font-size: 1.8em;
+    font-size: 1.5em;
     font-weight: 600;
-    margin-top: 2em;
+    margin-top: 1.5em;
     font-weight: normal;
     margin-bottom: 0.5em;
     font-family: var(--sans-serif);
@@ -78,8 +78,8 @@ const Article = styled.article`
   p,
   li {
     font-weight: 400;
-    font-size: 1.3rem;
-    line-height: 1.5em;
+    font-size: 1rem;
+    line-height: 1.1em;
   }
 
   ul {

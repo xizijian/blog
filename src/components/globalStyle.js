@@ -111,7 +111,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   h1 {
-    margin: 0.67em 0;
+    margin: 0.5em 0;
     color: inherit;
     font-weight: normal;
     text-rendering: optimizeLegibility;
